@@ -42,7 +42,3 @@ variable "sample7" {
   }
 }
 
-output "types" {
-  value = "variable sample5 - ${var.sample5},First value in list - ${var.sample6[0]}, Boolean Value of Map = ${var.sample [boolean]}"
-
-}
