@@ -180,3 +180,7 @@ type    = "A"
 ttl     = 30
 records = [aws_instance.rabbitmq.private_ip]
 }
+
+output "rabbitmq" {
+  value = aws_instance.rabbitmq.public_ip
+}
