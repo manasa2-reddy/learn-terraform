@@ -1,9 +1,10 @@
 
 resource "aws_instance" "frontend" {
+  ami = "ami-0a017d8ceb274537d"
 instance_type = "t3.micro"
 vpc_security_group_ids = ["sg-094ac9e937067c392"]
 tags = {
-name = "frontend"
+  name = "frontend"
 }
 }
 
