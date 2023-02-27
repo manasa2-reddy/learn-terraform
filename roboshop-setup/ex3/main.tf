@@ -4,7 +4,7 @@ data "aws_ami" "ami" {
   owners      = ["973714476881"]
 }
 
-/*resource "aws_instance" "instances" {
+resource "aws_instance" "instances" {
  for_each = var.instances
   ami                    = data.aws_ami.ami.image_id
   instance_type          = each.value["type"]
@@ -26,7 +26,11 @@ variable "instances" {
       type = "t3.small"
     }
   }
-}*/
+}
+
+output "ec2" {
+  value = aws_instances.instances
+}
 
 /*variable "names" {
   default = [ "catalogue","user"]
@@ -46,7 +50,7 @@ resource "aws_instance" "instances" {
 }*/
 
 /*little mature code*/
-variable "demo" {
+/*variable "demo" {
   default = [
      {
       name = "catalogue"
@@ -67,4 +71,5 @@ vpc_security_group_ids = ["sg-094ac9e937067c392"]
 tags                   = {
 Name = var.demo[count.index]["name"]
 }
-}
+}*/
+
