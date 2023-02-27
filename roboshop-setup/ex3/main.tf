@@ -29,7 +29,7 @@ variable "instances" {
 }
 
 output "ec2" {
-  value = aws_instances.instances
+  value = aws_instance.instances["catalogue"]["public_ip"]
 }
 
 /*variable "names" {
