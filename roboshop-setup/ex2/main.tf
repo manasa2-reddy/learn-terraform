@@ -9,14 +9,18 @@ resource "aws_instance" "frontend" {
   ami                    = data.aws_ami.ami.image_id
   instance_type          = "t3.micro"
   vpc_security_group_ids = ["sg-094ac9e937067c392"]
+  tags                   = {
+    Name = var.instances[count.index]
   }
+}
+
 
 variable "instances" {
   default = ["cart", "catalogue", "user", "payment", "Shipping"]
 }
 
-output = "public-ip"
-{
+output = "public-ip" {
+
         value = aws_instance.frontend.*.public_ip
 
 }
