@@ -33,7 +33,7 @@ output "ec2" {
 }
 
 /*variable "names" {
-  default = [ "catalogue","user"]
+  default = ["catalogue","user"]
 }
 variable "type" {
   default = ["t3.micro,t3.small"]
