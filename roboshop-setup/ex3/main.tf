@@ -1,6 +1,6 @@
 data "aws_ami" "ami" {
   most_recent = true
-  name_regex  = "Centos-8-DevOps-practice"
+  name_regex  = "Centos-8-DevOps-Pactice"
   owners      = ["973714476881"]
 }
 
@@ -29,7 +29,7 @@ variable "instances" {
 }
 
 output "ec2" {
-  value =  [ for k,v in aws_instance.instances : "$(k) - ${v.public_ip}"]
+  value = [for k,v in aws_instance.instances : '${k} - ${v.public_ip}"]
 }
 
 /*variable "names" {
