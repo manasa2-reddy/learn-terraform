@@ -13,6 +13,15 @@ resource "aws_instance" "ec2" {
   }
 }
 
+resource "aws_route53_record" "record" {
+  zone_id ="Z1032141216L485QW30RSR"
+  name = "${var.component}-dev.devopsb71.store"
+  type = "A"
+  ttl = 30
+  records = [aws_instance.ec2.private_ip]
+
+}
+
 
 
 variable "component" {}
