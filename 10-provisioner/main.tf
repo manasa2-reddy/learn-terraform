@@ -5,8 +5,7 @@ resource "aws_instance" "ec2" {
   tags = {
     name = "test"
   }
-
-
+  
   provisioner "remote-exec" {
 
     connection {
@@ -17,7 +16,6 @@ resource "aws_instance" "ec2" {
 
     inline = [
       "echo hello"
-      
     ]
   }
 }
