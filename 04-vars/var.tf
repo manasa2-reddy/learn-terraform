@@ -54,7 +54,7 @@ variable "d1" {
       course_name = "aws"
       trainer_name = "raju"
     },
-    }
+    {
     course_name = "devops"
     trainer_name = "ravi"
 
@@ -62,7 +62,7 @@ variable "d1" {
 ]
 }
 
-output "course_name" {
+output "course_names" {
   value = var.d1.*.course_name
 
 }
