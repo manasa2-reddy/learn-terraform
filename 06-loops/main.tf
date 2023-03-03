@@ -10,7 +10,7 @@ variable "d2" {
   default =  ["apple","banana"]
 }
 
-resource "null_resource" "d2 {
+resource "null_resource" "d2" {
   count =length(var.d2)
 }
 
